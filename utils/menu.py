@@ -1,5 +1,8 @@
 import argparse
-import re
+
+
+from .network import Network
+
 
 class Menu:
 
@@ -41,10 +44,18 @@ class Menu:
 
         self.argumentos:dict = vars(parse.parse_args())
         self.__check_args()
-        
+
 
     def __check_args(self):
-        pass
+        '''Comprueba que los arguemntos sean correctos'''
+        print(self.argumentos)
+
+        if  not ((self.argumentos['red'] is not None) and Network.check_network(self.argumentos['red'])):
+            raise ValueError('La red no es valida')
+        
+        if self.argumentos['ip'] is not None:
+            if not Network.check_ip(self.argumentos['ip']):
+                raise ValueError('La ip no es valida')
 
 
     def get_args(self) -> dict:
