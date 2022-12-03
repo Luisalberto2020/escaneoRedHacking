@@ -2,6 +2,9 @@ from utils.menu import Menu
 from colorama import Fore, Back, Style,init
 from services.argumentosService import ArgumetosService
 
+import logging
+logging.getLogger("scapy.runtime").setLevel(logging.ERROR)
+
 
 if __name__ == "__main__":
     init()

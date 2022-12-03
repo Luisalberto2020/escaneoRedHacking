@@ -5,7 +5,7 @@ class Ping():
     def __init__(self, target: str):
         self.target = target
         self.packet = IP(dst=self.target) / ICMP()
-        self.response = sr1(self.packet, timeout=1, verbose=0)
+        self.response = sr1(self.packet, timeout=1,verbose=0)
 
 
     def is_alive(self) -> bool:

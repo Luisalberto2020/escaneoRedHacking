@@ -42,6 +42,24 @@ class Menu:
             default=False
         )
 
+        parse.add_argument(
+            '-v',
+            '--verbose',
+            help='Muestra mas informacion sobre el escaneo',
+            action='store_true',
+            required=False,
+            default=False
+        )
+
+        parse.add_argument(
+            '-t',
+            '--threads',
+            help='Numero de hilos para el escaneo',
+            required=False,
+            type=int,
+            default=1
+        )
+
         self.argumentos:dict = vars(parse.parse_args())
         self.__check_args()
 
@@ -56,6 +74,8 @@ class Menu:
         if self.argumentos['ip'] is not None:
             if not Network.check_ip(self.argumentos['ip']):
                 raise ValueError('La ip no es valida')
+        if self.argumentos['threads'] < 1:
+            raise ValueError('Los hilos no pueden ser menor que 1')
 
 
     def get_args(self) -> dict:
