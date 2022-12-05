@@ -1,5 +1,6 @@
 import argparse
 import re
+from colorama import Fore, Back, Style
 
 
 from .network import Network
@@ -62,6 +63,22 @@ class Menu:
             default=1
         )
 
+        parse.add_argument(
+            '-b',
+            '--banner',
+            help='Muestra el banner del puerto por defecto se muestra',
+            action='store_true',
+            default=True
+        )
+
+        parse.add_argument(
+            '-j',
+            '--json',
+            help='Guarda los resultados en un archivo json por defecto no se guardaran',
+            type=str,
+            default=''
+        )
+
         self.argumentos:dict = vars(parse.parse_args())
         self.__check_args()
 
@@ -109,3 +126,19 @@ class Menu:
     def get_args(self) -> dict:
         '''Devuelve los argumentos de la aplicacion'''
         return self.argumentos
+
+
+    def print_result(self, result_ping:dict, result_ports:dict):
+        '''Imprime el resultado del escaneo'''
+        print(f'{Fore.GREEN}Escaneo de red{Style.RESET_ALL} \n \n')
+        print(f'{Fore.BLUE}IP{Style.RESET_ALL} \t\t\t {Fore.BLUE}Sistema{Style.RESET_ALL}\t\t {Fore.BLUE}Mac{Style.RESET_ALL}')
+        for ip in result_ping:
+            print(f'{ip}  \t {result_ping[ip]["sistema"]} \t\t {result_ping[ip]["mac"]}')
+
+        print(f'{Fore.BLUE}--------{Style.RESET_ALL} \t\t {Fore.BLUE}------{Style.RESET_ALL}\n')
+        print(f'{Fore.GREEN}Escaneo de puertos{Style.RESET_ALL} \n ')
+        print(f'{Fore.BLUE}IP{Style.RESET_ALL} \t\t\t {Fore.BLUE}Puerto{Style.RESET_ALL} \t {Fore.BLUE}Servicio{Style.RESET_ALL}')
+        for ip in result_ports:
+            for puerto in result_ports[ip]:
+                print(f'{ip} \t {puerto} \t\t {result_ports[ip][puerto]["servicio"]}')
+       
