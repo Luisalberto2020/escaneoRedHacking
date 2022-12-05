@@ -22,13 +22,13 @@ class AppService():
 
 
     @staticmethod
-    def __make_ping_thread(hosts: list,threads:int,verbose:bool) -> list:
+    def __make_ping_thread(hosts: list,threads:int,verbose:bool) -> dict:
         '''Realiza un ping a una lista de ips'''
-        results: list = []
+        results: dict = {}
         with ThreadPoolExecutor(max_workers=threads) as executor:
             for result in executor.map(AppService.__make_ping, hosts, [verbose] * len(hosts)):
                 if result is not None:
-                    results.append(result)
+                    results[result['ip']] = result
 
         return results
 
@@ -59,7 +59,7 @@ class AppService():
         
         else:
             for host in hosts:
-                result.append({'ip': host, 'sistema': 'Desconocido', 'mac': 'Desconocido'})
+                result[i.get('ip')] = {'sistema': 'Desconocido', 'mac': 'Desconocido'}
 
         return result
 
@@ -87,25 +87,27 @@ class AppService():
         scan_port = PortScanner(host,port)
         if scan_port.is_open():
             result = scan_port.get_sumary(banner)
-        
+            result['port'] = port
+
         return result
-        
+
+
     @staticmethod
-    def __make_scan_thread(host: str, ports: list,verbose:bool,threads:int,banner:True) -> list:
+    def __make_scan_thread(host: str, ports: list,verbose:bool,threads:int,banner:True) -> dict:
         '''Realiza un escaneo a un host'''
-        result: list = []
+        result: dict = {}
         if verbose:
             print(f'{Fore.YELLOW} Escanendo los puertos {ports} en {host} {Style.RESET_ALL}')
             
         with ThreadPoolExecutor(max_workers=threads) as executor:
             for result_port in executor.map(AppService.__make_port, [host] * len(ports), ports, [verbose] * len(ports), [banner] * len(ports)):
                 if result_port is not None:
-                    result.append(result_port)
+                    result[result_port['port']] = {'servicio': result_port['servicio']}
 
         return result
 
     @staticmethod
-    def main_scan(args: dict,hosts :list) -> list:
+    def main_scan(args: dict,hosts :list) -> dict:
         '''Funcion principal del programa devuelve los resultados'''
         result:dict = {}
 
@@ -120,6 +122,6 @@ class AppService():
         else:
             for host in hosts:
                 scan_port = AppService.__make_scan_thread(host,ports,args['verbose'],args['threads'],args['banner'])
-                result += scan_port
-        
+                result[host] = scan_port
+
         return result

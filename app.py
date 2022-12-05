@@ -18,7 +18,6 @@ if __name__ == "__main__":
             print(Fore.GREEN + 'Iniciando Escaneo con ping'+ Style.RESET_ALL)
 
         result_ping:list = AppService.main_ping(args)
-        #hosts:list = list(map(lambda x: x['ip'],result_ping))
         if args['verbose']:
             print(Fore.GREEN + 'Iniciando Escaneo de puertos'+ Style.RESET_ALL)
 
