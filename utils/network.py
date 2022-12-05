@@ -91,3 +91,19 @@ class Network:
 
 
         return hosts
+
+
+    @staticmethod
+    def get_ports(ports:str) -> list:
+        '''Obtiene los puertos de un string'''
+        ports_list:list = []
+        if ports == 'all':
+            ports_list = list(range(1, 65536))
+        elif re.match(r'^\d+$', ports):
+            ports_list.append(int(ports))
+        elif re.match(r'^\d+-\d+$', ports):
+            ports_list = list(range(int(ports.split('-')[0]), int(ports.split('-')[1]) + 1))
+        elif re.match(r'^\d+(,\d+)+$', ports):
+            ports_list = [int(port) for port in ports.split(',')]
+
+        return ports_list

@@ -1,4 +1,5 @@
 import argparse
+import re
 
 
 from .network import Network
@@ -8,6 +9,7 @@ class Menu:
 
 
     def  __init__(self):
+        '''Crear el menu y parsea los argumentos'''
         parse = argparse.ArgumentParser(description='Herramienta de escaneo de puertos y de red')
         objetivos = parse.add_mutually_exclusive_group(required=True)
         objetivos.add_argument(
@@ -64,18 +66,44 @@ class Menu:
         self.__check_args()
 
 
+    def __check_port(self)-> bool:
+        """_summary_
+            checkea los puertos si son validos
+        Returns:
+            bool: devuelve True si el puerto es valido el puerto
+        """
+
+        valid:bool = False
+        
+        if self.argumentos['puerto'] == '':
+            valid = True
+        elif self.argumentos['puerto'] == 'all':
+            valid = True
+        elif re.match(r'^\d+$', self.argumentos['puerto']):
+            valid = True
+        elif re.match(r'^\d+-\d+$', self.argumentos['puerto']):
+            valid = True
+        elif re.match(r'^\d+(,\d+)+$', self.argumentos['puerto']):
+            valid = True
+
+        return valid
+
     def __check_args(self):
         '''Comprueba que los arguemntos sean correctos'''
-        print(self.argumentos)
+        if self.argumentos['verbose']:
+            print(f'argumentos: {self.argumentos}')
+        if self.argumentos['red'] is not None:
+            if   not Network.check_network(self.argumentos['red']):
+                raise ValueError('La red no es valida')
 
-        if  not ((self.argumentos['red'] is not None) and Network.check_network(self.argumentos['red'])):
-            raise ValueError('La red no es valida')
-        
         if self.argumentos['ip'] is not None:
             if not Network.check_ip(self.argumentos['ip']):
                 raise ValueError('La ip no es valida')
         if self.argumentos['threads'] < 1:
             raise ValueError('Los hilos no pueden ser menor que 1')
+
+        if not self.__check_port():
+            raise ValueError('El puerto no es valido')
 
 
     def get_args(self) -> dict:
