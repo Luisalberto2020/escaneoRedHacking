@@ -137,8 +137,8 @@ class Menu:
 
         print(f'{Fore.BLUE}--------{Style.RESET_ALL} \t\t {Fore.BLUE}------{Style.RESET_ALL}\n')
         print(f'{Fore.GREEN}Escaneo de puertos{Style.RESET_ALL} \n ')
-        print(f'{Fore.BLUE}IP{Style.RESET_ALL} \t\t\t {Fore.BLUE}Puerto{Style.RESET_ALL} \t {Fore.BLUE}Servicio{Style.RESET_ALL}')
+        print(f'{Fore.BLUE}IP{Style.RESET_ALL} \t\t {Fore.BLUE}Puerto{Style.RESET_ALL} \t {Fore.BLUE}Servicio{Style.RESET_ALL}')
         for ip in result_ports:
             for puerto in result_ports[ip]:
-                print(f'{ip} \t {puerto} \t\t {result_ports[ip][puerto]["servicio"]}')
+                print(f'{ip} \t {puerto} \t\t\t {result_ports[ip][puerto]["servicio"]}')
        

@@ -24,11 +24,9 @@ if __name__ == "__main__":
         result_ports:list = AppService.main_scan(args,result_ping.keys())
 
         menu.print_result(result_ping,result_ports)
-        
+
         if  args['json']:
             AlmacenamientoService.save_json(result_ping,result_ports,args['json'])
-            
-            
 
     except ValueError  as error:
         print(f'{Fore.RED}Error: {error}{Style.RESET_ALL}')
