@@ -70,9 +70,6 @@ python app.py -i 192.168.95.178 -p 22,80 -pn
 
 ## Tratado de errores con ValueError:
 
-	
-
-<p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 
@@ -82,7 +79,6 @@ Como se ve en la foto si hay error de parseo mandara un value error que en el ma
 
 
 
-<p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 
@@ -93,10 +89,7 @@ Como se ve en la foto si hay error de parseo mandara un value error que en el ma
 
 
 
-<p id="gdcalert5" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image5.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert6">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
-
-![alt_text](images/image5.png "image_tooltip")
 
 
 Aquí trabajamos con una cola de hilos donde le especificamos el número máximo de hilos y python gestiona que no pase nunca ese número máximo de hilos.
@@ -108,8 +101,6 @@ los argumentos se chequean con expresiones regulares como la siguiente con re.ma
 
 
 
-<p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
 
 
 
@@ -119,12 +110,6 @@ los argumentos se chequean con expresiones regulares como la siguiente con re.ma
 
 Son los objetos que no hace falta construirlos por ejemplo network y usamos funciones estáticas co @staticmetod
 
-
-
-<p id="gdcalert7" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image7.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert8">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
-
-
-![alt_text](images/image7.png "image_tooltip")
 
 
 
@@ -143,10 +128,6 @@ Como se puede observar  las clases ping y scanPort son dos clases orientadas a o
 # Pruebas 
 
 Para las pruebas hemos comprobados los errores al introducir los datos como por ejemplo
-
-
-
-<p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
 
