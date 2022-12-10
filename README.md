@@ -1,34 +1,3 @@
-<!-- Output copied to clipboard! -->
-
-<!-----
-
-You have some errors, warnings, or alerts. If you are using reckless mode, turn it off to see inline alerts.
-* ERRORs: 0
-* WARNINGs: 0
-* ALERTS: 9
-
-Conversion time: 1.709 seconds.
-
-
-Using this Markdown file:
-
-1. Paste this output into your source file.
-2. See the notes and action items below regarding this conversion run.
-3. Check the rendered output (headings, lists, code blocks, tables) for proper
-   formatting and use a linkchecker before you publish this page.
-
-Conversion notes:
-
-* Docs to Markdown version 1.0β33
-* Sat Dec 10 2022 09:35:07 GMT-0800 (PST)
-* Source doc: Escaneo de Puertos
-* This document has images: check for >>>>>  gd2md-html alert:  inline image link in generated source and store images to your server. NOTE: Images in exported zip file from Google Docs may not appear in  the same order as they do in your doc. Please check the images!
-
-
-WARNING:
-You have 8 H1 headings. You may want to use the "H1 -> H2" option to demote all headings by one level.
-
------>
 
 
 <p style="color: red; font-weight: bold">>>>>>  gd2md-html alert:  ERRORs: 0; WARNINGs: 1; ALERTS: 9.</p>
@@ -151,7 +120,7 @@ python app.py -i 192.168.95.178 -p 22,80 -pn
 <p id="gdcalert3" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image3.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert4">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image3.png "image_tooltip")
+
 
 
 Como se ve en la foto si hay error de parseo mandara un value error que en el main lo capturara y mandará el mensaje
@@ -161,7 +130,7 @@ Como se ve en la foto si hay error de parseo mandara un value error que en el ma
 <p id="gdcalert4" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image4.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert5">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image4.png "image_tooltip")
+
 
 
 
@@ -187,7 +156,7 @@ los argumentos se chequean con expresiones regulares como la siguiente con re.ma
 <p id="gdcalert6" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image6.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert7">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image6.png "image_tooltip")
+
 
 
 
@@ -213,7 +182,6 @@ Como se puede observar  las clases ping y scanPort son dos clases orientadas a o
 <p id="gdcalert8" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image8.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert9">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image8.png "image_tooltip")
 
 
 
@@ -226,7 +194,6 @@ Para las pruebas hemos comprobados los errores al introducir los datos como por 
 <p id="gdcalert9" ><span style="color: red; font-weight: bold">>>>>>  gd2md-html alert: inline image link here (to images/image9.png). Store image on your image server and adjust path/filename/extension if necessary. </span><br>(<a href="#">Back to top</a>)(<a href="#gdcalert10">Next alert</a>)<br><span style="color: red; font-weight: bold">>>>>> </span></p>
 
 
-![alt_text](images/image9.png "image_tooltip")
 
 
 y en el funcionamiento hemos hecho un programa de pruebas que se llama de testdefuncionamiento para probar el funcionamiento del programa
